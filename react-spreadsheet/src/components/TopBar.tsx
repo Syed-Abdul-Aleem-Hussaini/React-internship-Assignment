@@ -1,6 +1,7 @@
 import React from 'react';
-import { Bell, GitCompareArrows,ArrowDownToLine, ChevronDown, ArrowDownUp, SquareLibrary,ChevronsRight,ListFilter,ArrowUpFromLine ,Share2 ,Table2 } from 'lucide-react';
-
+import { Bell, GitCompareArrows,ArrowDownToLine, ChevronDown, ArrowDownUp, SquareLibrary,ChevronsRight,ListFilter,ArrowUpFromLine  ,Table2 } from 'lucide-react';
+import { IoArrowRedoOutline } from "react-icons/io5";
+import { BsThreeDots } from "react-icons/bs";
 
 
 import { VscEyeClosed } from "react-icons/vsc";
@@ -18,7 +19,7 @@ const TopBar = () => {
           <span>Folder 2</span>
           <span>›</span>
           <span className="text-black font-semibold">Spreadsheet 3</span>
-          <ChevronDown size={14} className="ml-1" />
+          <BsThreeDots size={14} className="ml-1" />
         </div>
 
         {/* Right Side: Search + Actions */}
@@ -78,9 +79,9 @@ const TopBar = () => {
         <div className="flex gap-3">
           <button className="btn btn-sm btn-outline border-gray-300 text-gray-500 "><ArrowDownToLine size={17} />Import</button>
           <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"><ArrowUpFromLine size={17} />Export</button>
-          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"><Share2 size={17} />Share</button>
-          <button className="btn btn-sm w-35 bg-green-800 hover:bg-green-900 text-white border-gray-300">
-            <GitCompareArrows size = {14} />
+          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"><IoArrowRedoOutline size={17} />Share</button>
+          <button className="btn btn-md w-35 bg-green-800 hover:bg-green-900 text-white border-green-800">
+            <GitCompareArrows size = {18} />
  New Action
           </button>
         </div>
