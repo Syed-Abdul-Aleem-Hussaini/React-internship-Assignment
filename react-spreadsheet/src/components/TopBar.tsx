@@ -1,5 +1,5 @@
-import React from 'react';
-import { Bell, GitCompareArrows,ArrowDownToLine, ChevronDown, ArrowDownUp, SquareLibrary,ChevronsRight,ListFilter,ArrowUpFromLine  ,Table2 } from 'lucide-react';
+
+import { Bell, GitCompareArrows,ArrowDownToLine, ArrowDownUp, SquareLibrary,ChevronsRight,ListFilter,ArrowUpFromLine  ,Table2 } from 'lucide-react';
 import { IoArrowRedoOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -29,7 +29,7 @@ const TopBar = () => {
             placeholder="Search within sheet"
             className="input input-sm input-bordered  w-60 text-sm bg-gray-200"
           />
-          <div className="indicator">
+          <div className="indicator"  onClick={()=>{console.log("new Notification")}}>
                         <Bell size={21} className="text-gray-600 hover:animate-bounce" />
 
 
@@ -59,28 +59,31 @@ const TopBar = () => {
       <div className="flex justify-between items-center px-4 py-2 text-sm text-black border-t border-gray-300">
         <div className="flex gap-6 items-center">
           <div className='flex flex-row justify-between'>
-            <span className="font-medium text-gray-700 hover:cursor-default">Tool bar  </span>
+            <span className="font-medium text-gray-700 hover:cursor-default" onClick={()=>{console.log("This is a tool bar")}}>Tool bar  </span>
                <ChevronsRight className='text-grey-600' />
           </div>
-          <button className="flex items-center gap-1  text-black hover:text-black">
+          <button className="flex items-center gap-1  text-black hover:text-black" onClick={()=>{console.log("This is hide feild")}}>
             <VscEyeClosed size={20} /> Hide fields
           </button>
-          <button className="flex items-center gap-1  text-black hover:text-black">
+          <button className="flex items-center gap-1  text-black hover:text-black" onClick={()=>{console.log("add new sheet")}}>
             <ArrowDownUp size={14} /> Sort
           </button>
-          <button className="flex items-center gap-1  text-black hover:text-black">
+          <button className="flex items-center gap-1  text-black hover:text-black" onClick={()=>{console.log("filter the sheet")}}>
             <ListFilter  size={14} /> Filter
           </button>
-          <button className="flex items-center gap-1 hover:text-black">
+          <button className="flex items-center gap-1 hover:text-black" onClick={()=>{console.log("view the cells")}}>
             <SquareLibrary size={16} /> Cell view
           </button>
         </div>
 
         <div className="flex gap-3">
-          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500 "><ArrowDownToLine size={17} />Import</button>
-          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"><ArrowUpFromLine size={17} />Export</button>
-          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"><IoArrowRedoOutline size={17} />Share</button>
-          <button className="btn btn-md w-35 bg-green-800 hover:bg-green-900 text-white border-green-800">
+          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500 "   onClick={() => console.log('Import a new excel sheet')}
+><ArrowDownToLine size={17} />Import</button>
+          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"    onClick={() => console.log('Export this excel sheet')}><ArrowUpFromLine size={17} 
+ />Export</button>
+          <button className="btn btn-sm btn-outline border-gray-300 text-gray-500"   onClick={() => console.log('Share this excel sheet')}><IoArrowRedoOutline size={17}  
+  />Share</button>
+          <button className="btn btn-md w-35 bg-green-800 hover:bg-green-900 text-white border-green-800" onClick={()=>{console.log("add new Action")}}>
             <GitCompareArrows size = {18} />
  New Action
           </button>

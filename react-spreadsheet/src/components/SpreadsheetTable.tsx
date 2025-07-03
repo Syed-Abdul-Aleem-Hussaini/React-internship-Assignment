@@ -1,29 +1,22 @@
 // components/SpreadsheetTable.tsx
-import React from "react";
+
 import { FaUser, FaGlobe } from "react-icons/fa";
 import { RiHandbagFill } from "react-icons/ri";
 import { FaCalendarDays } from "react-icons/fa6";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { HiHandRaised } from "react-icons/hi2";
 
-
-
-
-
-
-
-
 const headers = [
   { label: "#", width: "w-[30px]" },
-  { label: "Job Request", icon: <RiHandbagFill className="text-gray-400 inline" />, width: "w-[220px]" },
-  { label: "Submitted", icon: <FaCalendarDays className="text-gray-400 inline" />, width: "w-[130px]" },
-  { label: "Status", icon: <IoIosArrowDropdownCircle  className="text-gray-400 inline" />, width: "w-[130px]" },
-  { label: "Submitter", icon: <FaUser className="text-gray-400 inline" />, width: "w-[160px]" },
-  { label: "URL", icon: <FaGlobe className="text-gray-400 inline" />, width: "w-[180px]" },
-  { label: "Assigned", width: "w-[140px]", bg: "bg-green-100",icon :<HiHandRaised className="text-gray-400 inline" /> },
-  { label: "Priority", width: "w-[140px]", bg: "bg-purple-100" },
-  { label: "Due Date", width: "w-[140px]", bg: "bg-purple-100" },
-  { label: "Est. Value", width: "w-[140px]", bg: "bg-orange-100" },
+  { label: "Job Request", icon: <RiHandbagFill className="text-gray-400 inline" />, width: "w-[220px]",bg : "bg-gray-200",text : "text-gray-600" },
+  { label: "Submitted", icon: <FaCalendarDays className="text-gray-400 inline" />, width: "w-[130px]",bg : "bg-gray-200" ,text : "text-gray-600"},
+  { label: "Status", icon: <IoIosArrowDropdownCircle className="text-gray-400 inline" />, width: "w-[130px]" ,bg : "bg-gray-200",text : "text-gray-600"},
+  { label: "Submitter", icon: <FaUser className="text-gray-400 inline" />, width: "w-[160px]",bg : "bg-gray-200",text : "text-gray-600" },
+  { label: "URL", icon: <FaGlobe className="text-gray-400 inline" />, width: "w-[180px]",bg : "bg-gray-200",text : "text-gray-600" },
+  { label: "Assigned", icon: <HiHandRaised className="text-gray-400 inline" />, width: "w-[140px]", bg: "bg-green-100",text : "text-green-800" },
+  { label: "Priority", width: "w-[140px]", bg: "bg-purple-100",text : "text-purple-800" },
+  { label: "Due Date", width: "w-[140px]", bg: "bg-purple-100",text : "text-purple-800" },
+  { label: "Est. Value", width: "w-[140px]", bg: "bg-orange-100",text : "text-orange-800" },
   { label: "", width: "w-[100px]" },
 ];
 
@@ -125,11 +118,11 @@ const SpreadsheetTable = () => {
     <div className="px-4 overflow-x-auto">
       <table className="table-fixed w-full border-collapse text-sm">
         <thead className="bg-white sticky  z-10 border-b border-gray-300">
-          <tr>
+          <tr >
             {headers.map((h, idx) => (
               <th
                 key={idx}
-                className={` border border-gray-200 px-3 py-2 text-left font-medium text-gray-700 ${h.bg || ""} ${h.width}`}
+                className={`border  border-white px-3 py-2 text-left font-medium  ${h.bg || ""} ${h.width}  ${h.text || ""}`}
               >
                 {h.icon && <span className="inline-block mr-1">{h.icon}</span>}
                 {h.label}
@@ -139,17 +132,18 @@ const SpreadsheetTable = () => {
         </thead>
         <tbody>
           {data.map((d) => (
-            <tr key={d.id} className="hover:bg-gray-50 transition">
+            <tr key={d.id}    onClick={() => console.log(`Row ${d.id} clicked`)}
+  className="hover:bg-gray-50 transition cursor-pointer">
               <td className="border border-gray-300 px-3 py-2">{d.id}</td>
-              <td className="border  border-gray-300 px-3 py-2 truncate">{d.job}</td>
+              <td className="border border-gray-300 px-3 py-2 truncate max-w-[200px]">{d.job}</td>
               <td className="border border-gray-300 px-3 py-2">{d.submitted}</td>
-              <td className="border  border-gray-300 px-3 py-2">
-                <span className={`px-2 py-1 rounded-full text-xs ${getStatusStyle(d.status)}`}>
+              <td className="border border-gray-300 px-3 py-2">
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusStyle(d.status)}`}>
                   {d.status}
                 </span>
               </td>
-              <td className="border  border-gray-300 px-3 py-2">{d.submitter}</td>
-              <td className="border  border-gray-300 px-3 py-2">
+              <td className="border border-gray-300 px-3 py-2">{d.submitter}</td>
+              <td className="border border-gray-300 px-3 py-2">
                 <a
                   href={`https://${d.url}`}
                   target="_blank"
@@ -159,22 +153,26 @@ const SpreadsheetTable = () => {
                   {d.url.length > 22 ? d.url.slice(0, 22) + "..." : d.url}
                 </a>
               </td>
-              <td className="border  border-gray-300 px-3 py-2">{d.assigned}</td>
-              <td className={`border  border-gray-300 px-3 py-2 ${getPriorityColor(d.priority)}`}>{d.priority}</td>
-              <td className="border  border-gray-300 px-3 py-2">{d.dueDate}</td>
-              <td className="border  border-gray-300 px-3 py-2">{d.value}</td>
-              <td className="border  border-gray-300 px-3 py-2"></td>
+              <td className="border border-gray-300 px-3 py-2">{d.assigned}</td>
+              <td className={`border border-gray-300 px-3 py-2 ${getPriorityColor(d.priority)}`}>{d.priority}</td>
+              <td className="border border-gray-300 px-3 py-2">{d.dueDate}</td>
+              <td className="border border-gray-300 px-3 py-2">{d.value}</td>
+              <td className="border border-gray-300 px-3 py-2"></td>
             </tr>
           ))}
 
-          {/* Empty rows */}
-          {emptyRows.map((_, idx) => (
-            <tr key={`empty-${idx}`}>
-              {headers.map((_, i) => (
-                <td key={i} className="border  border-gray-300 px-3 py-5 h-10"></td>
-              ))}
-            </tr>
-          ))}
+        {emptyRows.map((_, idx) => (
+  <tr
+    key={`empty-${idx}`}
+    onClick={() => console.log(`Empty row ${idx + 1} clicked`)}
+    className="hover:bg-gray-50 transition cursor-pointer"
+  >
+    {headers.map((_, i) => (
+      <td key={i} className="border border-gray-300 px-3 py-6 h-10"></td>
+    ))}
+  </tr>
+))}
+
         </tbody>
       </table>
     </div>
@@ -182,4 +180,3 @@ const SpreadsheetTable = () => {
 };
 
 export default SpreadsheetTable;
-// components/SpreadsheetTable.tsx

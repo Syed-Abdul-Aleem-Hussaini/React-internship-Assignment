@@ -1,7 +1,8 @@
-import React from 'react';
+
 import TopBar from './components/TopBar';
 import SpreadsheetTable from "./components/SpreadsheetTable";
 import SpreadsheetHeaderRow from './components/SpreadsheetHeaderRow';
+import StickyTabBar from './components/StickyTabBar';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
 
       {/* Your spreadsheet and tabs go below */}
       <SpreadsheetTable />
+      <StickyTabBar />
 
     </div>
   );
