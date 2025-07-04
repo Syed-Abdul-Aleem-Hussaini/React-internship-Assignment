@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# React Internship Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the submission for the React Internship Assignment.
 
-Currently, two official plugins are available:
+## 📌 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A spreadsheet-style interface built using **React**, designed to closely mimic the layout and experience of Google Sheets or Excel. The UI is fully responsive and functional with support for dynamic interaction and visual clarity.
 
-## Expanding the ESLint configuration
+## ✅ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Pixel-perfect layout based on Figma design
+- Spreadsheet-style table with grid lines and empty rows
+- Sticky headers and tab section
+- Tabs (`ABC`, `Answer a question`, `Extract`, `+`) aligned and responsive
+- Console logging for interactive elements (no dead UI)
+- Table supports row clicking for logging and future interactivity
+- Responsive design and mobile-friendly UI
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧩 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React + TypeScript
+- Tailwind CSS
+- React Icons
+- ESLint + Prettier + TypeScript type-checking
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧪 Quality Assurance
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Passed `npm run lint` ✅  
+- Passed `npm run type-check` ✅  
+- Functional components and clean commit history  
+- No dead UI – all buttons/tabs respond or log to console  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Deployment
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🔗 **Live Demo**: [https://react-internship-assignment.vercel.app](https://react-internship-assignment.vercel.app)  
+📁 **GitHub**: [https://github.com/Syed-Abdul-Aleem-Hussaini/React-internship-Assignment](https://github.com/Syed-Abdul-Aleem-Hussaini/React-internship-Assignment)
+
+## 🙏 A Note from the Developer
+
+This project was built with a lot of dedication and attention to detail. I’m highly passionate about frontend development and committed to continuous improvement. I’m really hoping to be considered for the internship opportunity and would love to contribute meaningfully to your team.
+
+---
+
+**Thank you for the opportunity!**  
+*– Syed Abdul Aleem Hussaini*
+
