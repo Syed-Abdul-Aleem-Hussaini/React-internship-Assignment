@@ -32,7 +32,7 @@ A spreadsheet-style interface built using **React**, designed to closely mimic t
 
 ## 🚀 Deployment
 
-🔗 **Live Demo**: [https://react-internship-assignment.vercel.app](https://react-internship-assignment.vercel.app)  
+🔗 **Live Demo**: [https://react-internship-assignment.vercel.app](https://react-internship-assignment-qnm4.vercel.app/)  
 📁 **GitHub**: [https://github.com/Syed-Abdul-Aleem-Hussaini/React-internship-Assignment](https://github.com/Syed-Abdul-Aleem-Hussaini/React-internship-Assignment)
 
 ## 🙏 A Note from the Developer
